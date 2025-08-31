@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Accessibility and Readability Improvements */
+@layer base {
+  /* Improved font rendering for better readability */
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Better line height for readability */
+  body {
+    line-height: 1.6;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  /* Heading hierarchy with proper spacing */
+  h1 {
+    line-height: 1.2;
+    letter-spacing: -0.025em;
+  }
+
+  h2 {
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+  }
+
+  h3 {
+    line-height: 1.3;
+    letter-spacing: -0.015em;
+  }
+
+  h4, h5, h6 {
+    line-height: 1.4;
+  }
+
+  /* Improved paragraph spacing */
+  p {
+    line-height: 1.7;
+    margin-bottom: 1rem;
+  }
+
+  /* Better list spacing */
+  li {
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Focus indicators for keyboard navigation */
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  a:focus-visible {
+    outline: 3px solid #3B82F6;
+    outline-offset: 2px;
+  }
+
+  /* High contrast mode support */
+  @media (prefers-contrast: high) {
+    .text-gray-600 {
+      color: #374151 !important;
+    }
+    .text-gray-500 {
+      color: #4B5563 !important;
+    }
+    .text-blue-100 {
+      color: #DBEAFE !important;
+    }
+  }
+
+  /* Reduced motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Dyslexia-friendly improvements */
+@layer components {
+  .dyslexia-friendly {
+    font-family: 'OpenDyslexic', 'Comic Sans MS', cursive;
+    letter-spacing: 0.12em;
+    word-spacing: 0.16em;
+    line-height: 1.8;
+  }
+
+  /* Better button accessibility */
+  .accessible-button {
+    min-height: 44px;
+    min-width: 44px;
+    padding: 12px 24px;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+  }
+
+  /* Improved form inputs */
+  .accessible-input {
+    min-height: 48px;
+    padding: 12px 16px;
+    font-size: 16px;
+    line-height: 1.5;
+    border: 2px solid #D1D5DB;
+    border-radius: 8px;
+    transition: border-color 0.2s ease;
+  }
+
+  .accessible-input:focus {
+    border-color: #3B82F6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  }
+}
