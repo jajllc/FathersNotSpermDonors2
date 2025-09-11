@@ -32,6 +32,21 @@ export const ProblemStatement: React.FC = () => {
                 </div>
               </div>
             </div>
+            <div className="bg-blue-600 border-l-4 border-blue-800 p-6 mb-8">
+              <div className="flex items-start">
+                <AlertCircle className="h-6 w-6 text-yellow-400 mr-3 mt-1 flex-shrink-0" />
+                <div>
+                  <h3 className="text-xl font-semibold text-yellow-300 mb-3 tracking-wide">
+                    Current System Bias
+                  </h3>
+                  <p className="text-yellow-200 leading-relaxed font-medium">
+                    Family courts still operate under the assumption that mothers are 
+                    naturally better caregivers, leading to systematic discrimination 
+                    against fathers seeking custody or equal parenting time.
+                  </p>
+                </div>
+              </div>
+            </div>
 
             <div className="space-y-6">
               {[
