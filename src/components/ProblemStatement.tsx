@@ -17,14 +17,14 @@ export const ProblemStatement: React.FC = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
           <div>
-            <div className="bg-red-50 border-l-4 border-red-500 p-6 mb-8">
+            <div className="bg-red-500 border-l-4 border-red-800 p-6 mb-8">
               <div className="flex items-start">
-                <AlertCircle className="h-6 w-6 text-red-500 mr-3 mt-1 flex-shrink-0" />
+                <AlertCircle className="h-6 w-6 text-white mr-3 mt-1 flex-shrink-0" />
                 <div>
-                  <h3 className="text-xl font-semibold text-red-800 mb-3 tracking-wide">
+                  <h3 className="text-xl font-semibold text-white mb-3 tracking-wide">
                     Current System Bias
                   </h3>
-                  <p className="text-red-800 leading-relaxed font-medium">
+                  <p className="text-white leading-relaxed font-medium">
                     Family courts still operate under the assumption that mothers are 
                     naturally better caregivers, leading to systematic discrimination 
                     against fathers seeking custody or equal parenting time.
