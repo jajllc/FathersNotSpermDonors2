@@ -9,9 +9,22 @@ import { CallToAction } from './components/CallToAction';
 import { PictureGallery } from './components/PictureGallery';
 import { Footer } from './components/Footer';
 import { Chatbot } from './components/Chatbot';
+import { StateResources } from './components/StateResources';
 
 function App() {
   const [petitionSubmitted, setPetitionSubmitted] = useState(false);
+  const [currentPage, setCurrentPage] = useState<'home' | 'state-resources'>('home');
+
+  if (currentPage === 'state-resources') {
+    return (
+      <div className="min-h-screen bg-white">
+        <Header />
+        <StateResources />
+        <Footer />
+        <Chatbot />
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-white">

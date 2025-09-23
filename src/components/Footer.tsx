@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
   ];
 
   const resources = [
-    { name: 'State by State Resources', href: '#' },
+    { name: 'State by State Resources', href: '#state-resources' },
     { name: 'Support Groups', href: '#' },
     { name: 'Research Papers', href: '#' },
     { name: 'News & Updates', href: '#' },
