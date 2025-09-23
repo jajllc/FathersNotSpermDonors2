@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, Scale } from 'lucide-react';
 
-export const Header: React.FC = () => {
+interface HeaderProps {
+  onNavigateHome?: () => void;
+}
+
+export const Header: React.FC<HeaderProps> = ({ onNavigateHome }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -28,7 +32,10 @@ export const Header: React.FC = () => {
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20 md:h-16">
-          <div className="flex items-center space-x-2">
+          <div 
+            className="flex items-center space-x-2 cursor-pointer"
+            onClick={() => onNavigateHome && onNavigateHome()}
+          >
             <Scale className={`h-8 w-8 ${isScrolled ? 'text-blue-800' : 'text-white'}`} />
             <span className={`font-bold text-xl md:text-xl ${isScrolled ? 'text-gray-900' : 'text-white'}`}>
               Equal Rights

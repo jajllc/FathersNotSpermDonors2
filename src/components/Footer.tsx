@@ -1,7 +1,11 @@
 import React from 'react';
 import { Scale, Mail, Phone, MapPin, Facebook, Twitter, Instagram, Linkedin } from 'lucide-react';
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  onNavigateToStateResources?: () => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onNavigateToStateResources }) => {
   const quickLinks = [
     { name: 'About Us', href: '#about' },
     { name: 'Statistics', href: '#facts' },
@@ -12,7 +16,7 @@ export const Footer: React.FC = () => {
   ];
 
   const resources = [
-    { name: 'State by State Resources', href: '#state-resources' },
+    { name: 'State by State Resources', href: '#', action: 'state-resources' },
     { name: 'Support Groups', href: '#' },
     { name: 'Research Papers', href: '#' },
     { name: 'News & Updates', href: '#' },
@@ -87,7 +91,13 @@ export const Footer: React.FC = () => {
                 <li key={resource.name}>
                   <a
                     href={resource.href}
-                    className="text-gray-200 hover:text-white transition-colors duration-200 font-medium text-base"
+                    className="text-gray-200 hover:text-white transition-colors duration-200 font-medium text-base cursor-pointer"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (resource.action === 'state-resources') {
+                        onNavigateToStateResources && onNavigateToStateResources();
+                      }
+                    }}
                   >
                     {resource.name}
                   </a>
