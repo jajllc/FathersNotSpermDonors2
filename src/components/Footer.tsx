@@ -95,7 +95,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigateToStateResources }) =>
                     onClick={(e) => {
                       e.preventDefault();
                       if (resource.action === 'state-resources') {
-                        onNavigateToStateResources && onNavigateToStateResources();
+                        if (onNavigateToStateResources) {
+                          onNavigateToStateResources();
+                        }
                       }
                     }}
                   >

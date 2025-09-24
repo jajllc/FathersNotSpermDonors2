@@ -15,24 +15,16 @@ function App() {
   const [petitionSubmitted, setPetitionSubmitted] = useState(false);
   const [currentPage, setCurrentPage] = useState<'home' | 'state-resources'>('home');
 
-  useEffect(() => {
-    const handleNavigateToStateResources = () => {
-      setCurrentPage('state-resources');
-    };
-
-    window.addEventListener('navigate-to-state-resources', handleNavigateToStateResources);
-    
-    return () => {
-      window.removeEventListener('navigate-to-state-resources', handleNavigateToStateResources);
-    };
-  }, []);
+  const handleNavigateToStateResources = () => {
+    setCurrentPage('state-resources');
+  };
 
   if (currentPage === 'state-resources') {
     return (
       <div className="min-h-screen bg-white">
         <Header onNavigateHome={() => setCurrentPage('home')} />
         <StateResources />
-        <Footer onNavigateToStateResources={() => setCurrentPage('state-resources')} />
+        <Footer onNavigateToStateResources={handleNavigateToStateResources} />
         <Chatbot />
       </div>
     );
@@ -51,7 +43,7 @@ function App() {
       <PictureGallery />
       <Testimonials />
       <CallToAction />
-      <Footer onNavigateToStateResources={() => setCurrentPage('state-resources')} />
+      <Footer onNavigateToStateResources={handleNavigateToStateResources} />
       <Chatbot />
     </div>
   );
